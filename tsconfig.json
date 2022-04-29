@@ -1,6 +1,7 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
+
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -18,12 +19,17 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    // aggiungo dichiarativa di @app come alias del path iniziale del file User.ts (interfacce e enum)
+    "paths": {
+      "@app/*": ["src/app/*"], // valore controllato della prima parte del path
+    },
   },
-  "angularCompilerOptions": {
+    "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

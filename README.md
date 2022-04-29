@@ -1,3 +1,12 @@
+# Angular - Exercise 2
+
+Creare un componente User-details, nel file .ts salvare l'oggetto user di tipo User (Typescript Esercizio 1), mostrare le proprietà di questo oggetto nel file html. *Formattare la data di nascita nel seguente formato 14 Dec 1995*
+
+Angular - Exercise 2
+Creare un componente User-details, nel file user-details.component.ts salvare l'oggetto user di tipo User (prenderlo da Typescript Esercizio 1). Mostrare le proprietà di questo oggetto nel file user-detail.component.html. Formattare la data di nascita nel seguente formato 14 Dec 1995 Consiglio: Utilizzate la pipe date -> https://angular.io/api/common/DatePipe
+
+# Angular - Exercise 2 END
+
 # AngularExercise
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.

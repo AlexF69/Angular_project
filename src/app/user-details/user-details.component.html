@@ -1,0 +1,52 @@
+<!-- <p>user-details works!</p> -->
+<h1>Oggetto User</h1>
+<hr>
+<h2> id: {{objUser.id}} Nome: {{objUser.name}} {{objUser.surname}}, età: {{objUser.age}} anni</h2>
+<!-- <br> -->
+<!-- <h2> Nome: {{objUser.name}}</h2>
+<br>
+<h2> Cognome: {{objUser.surname}}</h2>
+<br>
+<h2> Età: {{objUser.age}}</h2> -->
+<!-- <br>
+<span> Data di nascita: {{objUser.dateOfBirth}}</span> -->
+<!-- <br> 14 Dec 1995 da '1995-14-12' -->
+<h3> Data di nascita: {{ objUser.dateOfBirth | date: 'dd MMM yyyy' | titlecase }}, genere: {{objUser.gender}}</h3>
+<h3> Indirizzo: {{objUser.address.street}}, {{objUser.address.postalCode}} {{objUser.address.city}}</h3>
+<!-- <h3> Indirizzo città: {{objUser.address.city}}</h3>
+<h3> Indirizzo via: {{objUser.address.street}}</h3>
+<h3> Indirizzo postal code: {{objUser.address.postalCode}}</h3> -->
+<hr>
+<span> Ruolo: {{objUser.role}}</span>
+<br>
+<span> Username: {{objUser.username}}</span>
+<br>
+<span> Foto profilo in url: {{objUser.profilePhotoUrl}}</span>
+<br>
+<hr>
+<span> Azienda id: {{objUser.companies[0].id}}</span>
+<br>
+<span> Azienda nome: {{objUser.companies[0].name}}</span>
+<br>
+<span> Azienda descrizione: {{objUser.companies[0].description}}</span>
+<br>
+<span> Azienda città: {{objUser.companies[0].location.city}}</span>
+<br>
+<span> Azienda via: {{objUser.companies[0].location.street}}</span>
+<br>
+<span> Azienda cod.post.: {{objUser.companies[0].location.postalCode}}</span>
+<br>
+<hr>
+<span> Azienda id: {{objUser.companies[1].id}}</span>
+<br>
+<span> Azienda nome: {{objUser.companies[1].name}}</span>
+<br>
+<span> Azienda descrizione: {{objUser.companies[1].description}}</span>
+<br>
+<span> Azienda città: {{objUser.companies[1].location.city}}</span>
+<br>
+<span> Azienda via: {{objUser.companies[1].location.street}}</span>
+<br>
+<span> Azienda cod.post.: {{objUser.companies[1].location.postalCode}}</span>
+<br>
+
