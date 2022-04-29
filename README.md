@@ -1,3 +1,19 @@
+# Angular - Exercise 1
+
+Replicare la seguente struttura su angular
+
+Extra: Replicare anche il layout oltre la struttura
+
+*Consiglio: Per risolvere gli esercizi su Angular, creare un progetto vuoto attraverso la CLI, e creare un un branch a partire da master per ogni esercizio.*
+
+![struttura-esercizio-1](D:\Lavori\Develhope\Tutor\Esercizi\angular\3. Angular esercizio 1\struttura-esercizio-1.png)
+
+<!-- Creare tutti i componenti della web page uno alla volta con comando generate component nome-componente;
+ modificare manualmente app.component.html togliendo prima tutto il contenuto presente e poi richiamando i due container padre order e user (con prefisso app-).
+ Modificare il file nome-component.component.html aggiungendo una riga di <h1> o <p> con un commento e il richiamo al tag app- component relativo annidato,seondo il layout dato.
+ NB il file app.module.ts viene aggiornato automaticamente sui file di import ad ogni generate component con l'mport relativo.
+  -->
+
 # AngularExercise
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
