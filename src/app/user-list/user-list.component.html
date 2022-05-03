@@ -1,0 +1,12 @@
+<!-- <p>user-list works!</p> -->
+
+<div *ngFor="let user of users">
+
+  <!-- <img class="logo-img" src="{{user.profilePhotoUrl}}" > -->
+  <img [ngClass]="'logo-img'" src="{{user.profilePhotoUrl}}" >
+  <b> {{user.name}}</b>
+  <b> {{user.surname}}</b>
+  <span> {{user.age}}</span>
+  <span> {{user.address.city}}</span>
+  <p></p>
+</div>
