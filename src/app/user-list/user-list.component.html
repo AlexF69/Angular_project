@@ -1,12 +1,13 @@
-<!-- <p>user-list works!</p> -->
 
-<div *ngFor="let user of users">
+<!-- loop del padre dove passo al figlio occorrenza singola user come varibile pippo e
+l'indice dichiarato come index in fase di direttive
+// nelle [] nome variabile del figlio
+// nelle "" nome variabile del padre
+ -->
 
-  <!-- <img class="logo-img" src="{{user.profilePhotoUrl}}" > -->
-  <img [ngClass]="'logo-img'" src="{{user.profilePhotoUrl}}" >
-  <b> {{user.name}}</b>
-  <b> {{user.surname}}</b>
-  <span> {{user.age}}</span>
-  <span> {{user.address.city}}</span>
-  <p></p>
+<div class="separatore-user" *ngFor="let user of users; let i = index"> <!--  nelle [] nome variabile del figlio -->
+
+  <app-user-single [pippo]="user" [indice]="i+1"></app-user-single> <!--  nelle "" nome variabile del padre -->
+
 </div>
+
