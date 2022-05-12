@@ -24,3 +24,19 @@
   align-items: center;
   justify-content: space-between;
 }
+.container-nouser {
+  display: flex;
+  width: max-content;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  /*  */
+  padding: 0.375rem 0.75rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: black;
+  background-color: rgb(186, 175, 175);
+  border: 2px solid black;
+  border-radius: 0.25rem;
+}
+

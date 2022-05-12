@@ -12,3 +12,10 @@
     border-bottom-left-radius: 0;
     font-size: large;
 }
+.container {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+}
+
