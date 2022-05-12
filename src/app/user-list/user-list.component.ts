@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 // aggiunto manualmente
 import { IUser } from 'src/app/Model/User';
 import { Role } from 'src/app/Model/User';
@@ -63,8 +63,31 @@ export class UserListComponent implements OnInit {
       gender: Gender.FEMALE,
     }, // fine occorrenza 2
   ];
-
+  @Input() cancellato!: IUser; // nome variabile dalla parte del figlio occorrenza singola del loop
   constructor() {}
 
   ngOnInit(): void {}
+  cancello(userdacanc: IUser) {
+    // let indice = userdacanc.id;
+    //  indice = userdacanc.id;
+    console.log(
+      'user selezionato per cancellarlo da user-LIST',
+      userdacanc.name
+    );
+    console.log(
+      'id dello user selezionato per cancellarlo da user-LIST',
+      userdacanc.id
+    );
+    // cancellazione elemento array user in componente list (this.users) in base a valore in userdacanc
+    // da input. Uso metodo filter per filtrare in un nuovo array o nello stesso mio array this, tutti
+    // gli elementi che non sono quello ricevuto in input da cancellare (userdacanc).
+
+    this.users = this.users.filter(function (f) {
+      // let newArray = this.users.filter(function (f) { //oppure uso un nuovo Array di appoggio
+      return f !== userdacanc;
+    });
+    // console.log(newArray); // di controllo
+    // oppure in array function
+    // this.users = this.users.filter((f) => f !== userdacanc);
+  }
 }

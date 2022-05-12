@@ -5,9 +5,12 @@ l'indice dichiarato come index in fase di direttive
 // nelle "" nome variabile del padre
  -->
 
-<div class="separatore-user" *ngFor="let user of users; let i = index"> <!--  nelle [] nome variabile del figlio -->
+<div class="separatore-user" *ngFor="let user of users; let i = index"> <!--  semplice passaggio variabile array users elelemnto per elemento -->
+  <!--  nelle [] nome variabile del figlio -->
 
-  <app-user-single [pippo]="user" [indice]="i+1"></app-user-single> <!--  nelle "" nome variabile del padre -->
+  <app-user-single class="container" [utente]="user" [indice]="i+1" (cancellato)="cancello($event)"></app-user-single>
+
+  <!-- <app-user-single [pippo]="user" [indice]="i+1" ></app-user-single> -->
 
 </div>
 

@@ -1,11 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core'; // aggiunto Input
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'; // aggiunto Input
 import { IUser } from '../Model/User';
-// aggiunto manualmente OLD da togliere
-// import { IUser } from 'src/app/Model/User';
-// import { Role } from 'src/app/Model/User';
-// import { Gender } from 'src/app/Model/User';
-// import { Address } from 'src/app/Model/User';
-// import { Company } from 'src/app/Model/User';
 
 @Component({
   selector: 'app-user-single',
@@ -14,10 +8,19 @@ import { IUser } from '../Model/User';
 })
 export class UserSingleComponent implements OnInit {
   // dichiaro e inizializzo var da componente padre a figlio, come le vede il figlio
-  @Input() pippo!: IUser; // nome variabile dalla parte del figlio occorrenza singola del loop
+  @Input() utente!: IUser; // nome variabile dalla parte del figlio occorrenza singola del loop
   @Input() indice: number = 0; // nome variabile dalla parte del figlio indice per numerare gli utenti
+  @Output() cancellato = new EventEmitter<IUser>(); // variabile dello user da cancellare passato al padre user-list
   // inizializzare e tipizzare sempre variabili
   constructor() {}
 
   ngOnInit(): void {}
+
+  selpercanc(userpassato: IUser) {
+    console.log(
+      'user selezionato per cancellazione da user-SINGLE',
+      userpassato.name
+    );
+    this.cancellato.emit(userpassato); // passa in emissione lo user da cancellare
+  }
 }

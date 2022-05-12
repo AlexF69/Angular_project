@@ -3,9 +3,16 @@
   partendo dalle due varibili passate dal padre: pippo e indice
 -->
 <span> {{indice}}.</span>
-<img [ngClass]="'logo-img'" src="{{pippo.profilePhotoUrl}}" alt="foto di un utente gatto" >
-<b> {{pippo.name}}</b>
-<b> {{pippo.surname}}</b>
-<span> {{pippo.age}}</span>
-<span> {{pippo.address.city}}</span>
+<img [ngClass]="'logo-img'" src="{{utente.profilePhotoUrl}}" alt="foto di un utente gatto" > -->
+<!-- Le direttive di attributo ngClass [ngClass] e ngStyle [ngStyle], diverse dalle strutturali,
+  permettono di lavore sugli attributi di classe con PROPERTY BINDING servono per arricchire/variare gli elementi
+  a livello di classe e/o stile, a seconda del valore in rendereing e in maniera dinamica. -->
+<!-- passo la classe in  PROPERTY BINDING ma potei anche in modo normale visto che no ho condizioni-->
+<!-- <img class="logo-img" src="{{pippo.profilePhotoUrl}}" alt="foto di un utente gatto" > -->
+<b> {{utente.name}}</b>
+<b> {{utente.surname}}</b>
+<span> {{utente.age}}</span>
+<span> {{utente.address.city}}</span>
+<button type="button" class="bottone" (click)="selpercanc(utente)">DELETE</button>
+<!-- <button type="button" class="btn btn-primary btn-sm" (click)="delete(utente)">Cancellami</button> -->
 <p></p>
