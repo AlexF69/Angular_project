@@ -87,7 +87,7 @@ export class UserListComponent implements OnInit {
       return f !== userdacanc;
     });
     // console.log(newArray); // di controllo
-    // oppure in array function
+    // oppure con array function
     // this.users = this.users.filter((f) => f !== userdacanc);
   }
 }
