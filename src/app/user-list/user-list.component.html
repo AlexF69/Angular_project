@@ -6,10 +6,10 @@ l'indice dichiarato come index in fase di direttive
 // aggiungo controllo lista users pieno con *ngIFsu array users, altrimenti vado al template noUser
  -->
 <div *ngIf="users.length > 0; else noUsers">
-<div class="separatore-user" *ngFor="let user of users; let i = index" > <!--  semplice passaggio variabile array users elelemnto per elemento -->
+<div class="separatore-user"  *ngFor="let user of users; let i = index" >
+  <!--  semplice passaggio variabile array users elelemnto per elemento -->
   <!--  nelle [] nome variabile del figlio -->
-  <app-user-single class="container" [utente]="user" [indice]="i+1" (cancellato)="cancello($event)"></app-user-single>
-  <!-- <app-user-single [pippo]="user" [indice]="i+1" ></app-user-single> -->
+  <app-user-single class="container" [ngClass]="getBorderClass(user.role)" [utente]="user" [indice]="i+1" (cancellato)="cancello($event)"></app-user-single>
 </div>
 </div>
 
@@ -21,3 +21,17 @@ l'indice dichiarato come index in fase di direttive
  </div>
 
 </ng-template>
+
+<!-- da mettere in tag richiamato sopra  app-user-single-->
+<!-- <div [ngClass]="'border-info'"></div> -->
+
+<!-- [ngClass]="getBorderClass(users.length)" -->
+<!-- [ngClass]="'border-green'" -->
+<!-- [ngClass]="{'border-green' : users.length===1, 'border-red' : users.length===2 }" non funziona-->
+
+  <!-- // cioè aggiungo una classe a questo div, aggiungo la classe in border-info
+  // oppure a seconda del booleano project.done la direttiva di attributo di classe bordo blu elettrico (= border-info) o arancio (= border-warning)
+  <div class="card" [ngClass]="project.done ? 'border-info' : 'border-warning'"> // se è vero project.done sarà border-info altrimenti border-warning
+  // oppure come sopra con + scelta di classi da applicare a seconda della condizione, scelta multipla
+  <div class="card" [ngClass]="{'border-info' : project.done, 'border-warning' : !project.done }"> //
+  // viene valutata/controllata al momento, quindi se cambia il valore Angular aggiorna online il rendering -->

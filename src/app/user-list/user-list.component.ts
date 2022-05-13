@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SelectControlValueAccessor } from '@angular/forms';
 // aggiunto manualmente
 import { IUser } from 'src/app/Model/User';
 import { Role } from 'src/app/Model/User';
@@ -64,20 +65,14 @@ export class UserListComponent implements OnInit {
     }, // fine occorrenza 2
   ];
   @Input() cancellato!: IUser; // nome variabile dalla parte del figlio occorrenza singola del loop
+
+  classe: string = '';
   constructor() {}
 
   ngOnInit(): void {}
   cancello(userdacanc: IUser) {
     // let indice = userdacanc.id;
     //  indice = userdacanc.id;
-    console.log(
-      'user selezionato per cancellarlo da user-LIST',
-      userdacanc.name
-    );
-    console.log(
-      'id dello user selezionato per cancellarlo da user-LIST',
-      userdacanc.id
-    );
     // cancellazione elemento array user in componente list (this.users) in base a valore in userdacanc
     // da input. Uso metodo filter per filtrare in un nuovo array o nello stesso mio array this, tutti
     // gli elementi che non sono quello ricevuto in input da cancellare (userdacanc).
@@ -89,5 +84,26 @@ export class UserListComponent implements OnInit {
     // console.log(newArray); // di controllo
     // oppure con array function
     // this.users = this.users.filter((f) => f !== userdacanc);
+  }
+  getBorderClass(userRole: Role) {
+    if (userRole == Role.ADMIN) {
+      this.classe = 'border-red';
+      // return 'border-red';
+      return this.classe;
+    }
+    if (userRole == Role.STAFF) {
+      this.classe = 'border-green';
+      // return 'border-green';
+      return this.classe;
+    }
+    if (userRole == Role.MANAGER) {
+      this.classe = 'border-blue';
+      // return 'border-blue';
+      return this.classe;
+    } else {
+      // STUDENT
+      this.classe = 'border-yellow';
+      return this.classe;
+    }
   }
 }
