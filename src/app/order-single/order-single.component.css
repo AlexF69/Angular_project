@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+  background-color: rgb(124, 201, 215);
+  /* margin-top: 10%;
+  margin-bottom: 10%; */
+  border: solid;
+}
+.main div  {
+  width: 40%;
+  height: 80%;
+}

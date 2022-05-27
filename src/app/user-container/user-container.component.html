@@ -1,2 +1,12 @@
-<p>user-container works!</p>
-<h1>Ciao! sono in padre user-container.component.html</h1>
+<!-- <p>user-container works!</p> -->
+<div class="main">
+ <!-- <h1 class="text-center">user.container</h1> -->
+  <div>
+    <app-user-list (mostraUtente)="mostraDettaglio($event)"></app-user-list>
+</div>
+user container
+<div *ngIf="visibile">
+  <app-user-detail [utente]="utente" (chiudi)="chiudiDetail()"></app-user-detail>
+
+</div>
+</div>

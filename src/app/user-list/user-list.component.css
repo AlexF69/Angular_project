@@ -1,0 +1,17 @@
+.main {
+  /* width: 60%;*/
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(59, 200, 134);
+  border: solid;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20%;
+  margin-bottom: 20%;
+
+}
+.main div {
+  width: 70%;
+  height: 30%;
+}

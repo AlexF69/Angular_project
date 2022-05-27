@@ -1,2 +1,10 @@
-<p>order-single works!</p>
-<h3>Ciao! sono in nipote order-single.component.html</h3>
+<div class="main">
+<div>
+  <app-user-single (mostraUtente)="mostraUtente()"></app-user-single>
+</div>
+order single
+<div>
+  <app-order-detail></app-order-detail>
+</div>
+<app-user-detail *ngIf="mostraDettagli" (chiudi)="mostraDettagli=false"> </app-user-detail>
+</div>

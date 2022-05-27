@@ -1,2 +1,4 @@
-<p>user-detail works!</p>
-<h2>Ciao! sono in figlio user-detail.component.html</h2>
+<div class="main">
+{{utente?.name | uppercase }} {{utente?.surname | uppercase}}
+<button (click)="valorizzaChiudi()">Chiudi questo componente user-detail</button>
+</div>

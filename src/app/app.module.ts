@@ -10,10 +10,25 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { OrderSingleComponent } from './order-single/order-single.component';
 import { UserSingleComponent } from './user-single/user-single.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { AppRountingModule } from './app-routing.module';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
-  declarations: [AppComponent, OrderContainerComponent, UserContainerComponent, UserListComponent, UserDetailComponent, OrderListComponent, OrderSingleComponent, UserSingleComponent, OrderDetailComponent],
-  imports: [BrowserModule],
+  declarations: [
+    AppComponent,
+    OrderContainerComponent,
+    UserContainerComponent,
+    UserListComponent,
+    UserDetailComponent,
+    OrderListComponent,
+    OrderSingleComponent,
+    UserSingleComponent,
+    OrderDetailComponent,
+    NavbarComponent,
+    NotfoundComponent,
+  ],
+  imports: [BrowserModule, AppRountingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

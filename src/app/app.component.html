@@ -1,8 +1,31 @@
-<app-order-container></app-order-container>
-<app-user-container></app-user-container>
-<app-user-detail></app-user-detail>
-<app-user-list></app-user-list>
-<app-order-list></app-order-list>
-<app-order-single></app-order-single>
-<app-user-single></app-user-single>
-<app-order-detail></app-order-detail>
+
+
+
+
+<!-- <div class="container-main"> solo per colore sfondo grigio e altezza intera pagina -->
+  <!-- <h1 class="text-center">app.component</h1> solo per centrare titolo -->
+
+  <div class="container_navbar">
+    <app-navbar></app-navbar>
+
+  </div>
+ <!-- <div class="container">
+    <app-user-container></app-user-container>
+</div> -->
+  <!-- richiamo del router -->
+  <div class="container-main">
+  <router-outlet></router-outlet>
+<!-- renderizzazione della intera pg -->
+
+  <!-- <div class="container">
+
+    <div>
+    <app-user-container></app-user-container>
+    </div>
+
+    <div>
+    <app-order-container></app-order-container>
+    </div>
+
+  </div> -->
+</div>

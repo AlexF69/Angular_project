@@ -1,0 +1,13 @@
+.main {
+height: 100%;
+display: flex;
+justify-content: center;
+background-color: pink;
+border: solid black;
+align-items: center;
+}
+
+.main div {
+  width: 80%;
+  height: 100%;
+}

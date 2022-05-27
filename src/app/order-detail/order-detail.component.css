@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 35%;
+  background-color: rgb(10, 241, 14);
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border: solid;
+}

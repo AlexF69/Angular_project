@@ -1,2 +1,9 @@
-<p>user-list works!</p>
-<h2>Ciao! sono in figlio user-list.component.html</h2>
+<div class= "main">
+  user list
+<div *ngFor="let user of users" >
+
+  <app-user-single [utente]="user" (mostraUtente)="mostra($event)"></app-user-single>
+</div>
+
+
+</div>
