@@ -1,3 +1,8 @@
+# Angular - Exercise 10
+
+Rifare l'esercizio precedente ma adesso `counter` sarà un Subject
+
+ERA
 # Angular - Exercise 9.1
 
 Da un progetto vuoto:
@@ -12,7 +17,7 @@ Da un progetto vuoto:
 
 
 # Angular - Exercise 9.2
-- Creare un componente `show-counter` e un componente `edit-counter`          
+- Creare un componente `show-counter` e un componente `edit-counter`
 - Il componente `show-counter` dovrà mostrare il valore della proprietà `counter`
 - Il componente `edit-counter` dovrà mostrare:
   - Un campo di input (che determinerà il valore che si vorrà sommare o sottrarre a `counter`)

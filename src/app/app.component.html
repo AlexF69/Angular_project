@@ -1,6 +1,5 @@
-<!-- il padre app-component passa le due variabili contatore e errore al figlio show-counter  -->
-<app1-show-counter [counter]="contatore" [error]="errore"></app1-show-counter>
-
+<!-- gestisco il passaggio dei valori counter e error direttamente in inizializzazione del show counter -->
+<app1-show-counter ></app1-show-counter>
 <!-- all'evento modContatore del figlio edit-counter scatta l'evento 'setContatore' del padre app-component -->
 <!-- all'evento checkErrore del figlio edit-counter scatta l'evento 'setErrore' del padre app-component -->
 <app1-edit-counter (modContatore) = "setContatore($event)" (checkErrore) = "setErrore($event)"></app1-edit-counter>

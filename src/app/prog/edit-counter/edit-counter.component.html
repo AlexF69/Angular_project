@@ -3,14 +3,15 @@
   <form>
     <label for="valore">Valore da aggiungere o togliere al contatore</label> <br>
     <!--  -->
-    <input type="number" name="valore" ngModel #operando="ngModel">
-    <!-- ngModel #operando="ngModel" per gestire l'attributo di elemento input html tramite NGModule e form-->
+    <input type="number" name="valore" [(ngModel)]="cont" #operando="ngModel">
+    <!-- [(ngModel)]="cont" è placeholder per il contatore  -->
+     <!-- ngModel #operando="ngModel" per gestire l'attributo di elemento input html tramite NGModule e form-->
     <br><br>
     <!-- all'evento click del bottone button scatta l'evento relativo, somma o sottrai, del componente edit-counter
       Inoltre passo in binding all'elemento bottone l'attributo value del elemento input intercettato con #operando di ngModel -->
-    <button type="button" (click)="somma(operando.value)">Aggiungo {{operando.value}} in valore assoluto al contatore </button>
+    <button type="button" (click)="somma()">Aggiungo {{cont}} in valore assoluto al contatore </button>
     <br><br><br>
-    <button type="button" (click)="sottrai(operando.value)">Sottraggo {{operando.value}} in valore assoluto al contatore </button>
+    <button type="button" (click)="sottrai()">Sottraggo {{cont}} in valore assoluto al contatore </button>
 </form>
 </div>
 
