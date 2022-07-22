@@ -27,7 +27,7 @@ export const birre: Beer[]= [
   },
   {
     id : 4,
-    type : "small",
+    type : "medium",
     name : 'Moretti',
     price : 40
   },
@@ -39,13 +39,13 @@ export const birre: Beer[]= [
   },
   {
     id : 6,
-    type : "small",
+    type : "medium",
     name : 'Ceres',
     price : 60
   },
   {
     id : 7,
-    type : "small",
+    type : "medium",
     name : 'Icnusa',
     price : 70
   },
@@ -57,13 +57,13 @@ export const birre: Beer[]= [
   },
   {
     id : 9,
-    type : "small",
+    type : "medium",
     name : 'Beks',
     price : 90
   },
   {
     id : 10,
-    type : "small",
+    type : "medium",
     name : 'Tuborg',
     price : 100
   },

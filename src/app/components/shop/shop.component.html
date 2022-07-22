@@ -1,25 +1,42 @@
 <!-- select dei nomi -->
+<form #f="ngForm" (ngSubmit) = "trovaBirra(f)" >
 <div>
-  <select name="nome" id="nome">
-<!-- select option/valori per i valori di nome delle birre
-  <option *ngFor="let nome of nomi" [ngValue]="nome">{{nome}}</option>
--->
+  <select name="nome" id="nome" ngModel>
+<!-- select option/valori per i valori di nome delle birre -->
+  <option *ngFor="let nome of birreList" [value]="nome.name">{{nome.name}}</option>
+
 </select>
 </div>
 <!-- select dei tipi -->
 <div>
-  <select name="tipi" id="tipi" >
-    <!-- select option/valori per i valori dei tipi delle birre
-    <option *ngFor="let tipo of tipi" [ngValue]="tipo">{{tipo}}</option>
--->
+  <select name="tipi" id="tipi" ngModel>
+    <!-- select option/valori per i valori dei tipi delle birre -->
+    <!-- <option *ngFor="let tipo of birreList" [value]="tipo.type">{{tipo.type}}</option> -->
+    <option value="small">small</option>
+    <option value="medium">medium</option>
 </select>
 </div>
+
 <!-- bottone search -->
 <div>
-<button> Search </button>
+<button type="submit" (click)="onClick()"> Search </button>
   <!-- <button (click)="cerca_birra()"> Search </button> -->
-
 </div>
+</form>
+
+  <!-- per renderizzare dettaglio birra  -->
+<div *ngIf="currentBirra; else nessunaBirra">
+  <bir-dettaglio [birra]="currentBirra"></bir-dettaglio>
+</div>
+
+<div *ngIf="(birreList | filterPipe: searchBirra) && (birreList|filterPipe: searchBirra).length > 0; else nessunaBirra" >
+ <bir-dettaglio *ngFor ="let birra of birreList | filterPipe: searchBirra" [birra] = "birra" > </bir-dettaglio>
+</div>
+
+<ng-template #nessunaBirra>
+  nessuna birra selezionata
+</ng-template>
+
 
 
 <!-- <div class="column small-12 large-2 container" style="margin-top:20px">
