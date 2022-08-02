@@ -8,11 +8,13 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 })
 export class BirraserviceService {
 
-// ospito/prendo le birre array su una variabile
-  birreObj = birre;
-// passo l'array in un observable per le select
-  birreListSubject: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>(this.birreObj)
-// var in un observable per una birra puntuale
+// ospito/prendo le birre array su la var birreObj
+birreObj = birre; // birre è la varibile del file beer.interface.ts
+// Per le select creo una var dove metto l'array birre tipizzato di cui sopra ad un observable di tipo behaviaur,
+// che recupera sempre l'ultimo valore emesso per i nuovi osservatori sottoscritti;
+// Passo this.birreObj valorizzato sopra in modo da emettere l'array al momento in cui qualcuno si sottoscrive
+birreListSubject: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>(this.birreObj)
+// var in un observable per una birra puntuale per id passato
 currentBirraSubject: BehaviorSubject<Beer | undefined> = new BehaviorSubject<Beer | undefined>(undefined)
 
   constructor(){  }
@@ -26,21 +28,9 @@ getCurrentBirraSubject(): Observable<Beer | undefined>{
 }
 // un metodo che prenda come parametro un id e che ritorni l'oggetto corrispondente sotto forma di observable
 getCurrentBirraById(id: number): void {
+  // perchè non return this.currentBirraSubject...........
   this.currentBirraSubject.next(this.birreObj.find((elemento: Beer) => elemento.id == id))
 }
-
-// // proprietà per tornare l'array di birre / che ritorni l'observable di dati
-// get returnbirre_p() {
-//   return of(birre) // of = metodo per ritornare l'array di birre trasformato in observable
-// }
-// // oppure al posto della proprietà un metodo per tornare l'array di birre trasformato in observable da metodo of
-// returnbirre_m() {
-//   return of(birre) // metodo per ritornare l'array di birre trasformato in observable
-// }
-// // un metodo che prenda come parametro un id e che ritorni l'oggetto corrispondente sotto forma di observable
-// returnbirra_by_id(id: number){
-//   return of(birre.find(elemento => elemento.id == id))
-// }
 
 }
 
