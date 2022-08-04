@@ -1,6 +1,14 @@
 <hr>
-<h4>sono in componente api-covid19</h4>
+<h4>Componente api-covid19</h4>
 <br>
-<h5>Contenuto della API covid19 da ngOnInit di covid19: {{covid19}} </h5>
-
-
+<!-- Mostrare il numero complessivo di proprietà presenti nella risposta dell'API -->
+<h5>Numero complessivo di proprietà presenti nella risposta dell'API: {{covid19.length}} </h5>
+<hr>
+<!-- Utilizzando la stessa API, per ogni singola proprietà mostrare name ed endpoint -->
+<!-- il db è un array di array per cui faccio un loop per prendere prima il primo elemento dell'array epoi il secondo -->
+<div *ngFor="let covid of covid19">
+   <!-- prendo il primo elemento dell'array [0] -->
+  <p> {{covid[0]}}</p>
+  <!-- prendo il secondo elemento dell'array [1] sarebbe l'endpoint-->
+  <p> {{covid[1]}}</p>
+</div>

@@ -6,13 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class Covid19Service {
-  // ?? x gestire i servizi di Http con osservabili e sottoscrizioni per visualizzare i dati?? in componente covid19.component.ts
-  // ho bisogno di crearmi l'nterfaccia modello dati della PAI?? se si in base a quale struttura oggetti?
-  // vd file creato covid19db.json ........ devo tipizzare???
-  // inerface creata Covid19api
+// creo funzione service per caricare poi sul componente il db api.covid19api come osservabile generico any
   constructor(private httpClient: HttpClient) {  }
-// function per ritornare il numero complessivo di proprietà presenti nella risposta dell'API
-  getNumTot() {
-    return this.httpClient.get('https://api.covid19api.com/');
+// uso la function di Httpclient  get per ritornare tutte le proprietà presenti nella risposta dell'API, come esservabile
+  getNumTot(): Observable<any> { // come osservabile generico any
+    return this.httpClient.get<any>('https://api.covid19api.com/');
      }
 }
