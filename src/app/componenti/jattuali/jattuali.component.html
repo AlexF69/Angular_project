@@ -1,0 +1,51 @@
+<div class="container "> <!-- classe per centrare contenuti dei tre box -->
+<!--  bd-example-row per visualizzare il rosa delle colonne, si può togliere dopo -->
+  <!-- <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"> -->
+ <div class="d-flex">
+    <h4>JOKE attuale</h4>
+ </div>
+<!-- se jokeCorrente è valorizzato lo renderizza considerandolo un array dove a posizione 0 è la prima riga 'setup'
+  e a posizione 1 la seconda riga 'delivery'  -->
+  <!-- <div class="d-flex"> -->
+  <div *ngIf="jokeCorrente" class="row">
+<!-- rendereing della prima e della seconda riga JOKE considerati come array -->
+    <h5 class="d-flex"> {{jokeCorrente[0]}}</h5> <!-- valorizzo jokeCorrente in ngOnInit -->
+    <h5 class="d-flex"> {{jokeCorrente[1]}}</h5> <!-- valorizzo jokeCorrente in ngOnInit -->
+  <!-- </div> -->
+  </div>
+  <!-- <hr> -->
+<!-- renderizzo i due BOTTONI legati ai metodi addxxx che scatta al click del bottone, ai metodi viene passato il joke corrente visualizzato sopra -->
+
+<div class="row container text-center justify-content-center">
+  <div class="col-1">
+    <button type="button" class="btn-like col-md-auto" (click)="addLikeJoke(jokeCorrente)">Like</button>   <!-- bottone con classe custom -->
+  </div>
+  <div class="col-1">
+    <button type="button" class="btn-dislike col-md-auto" (click)="addDisLikeJoke(jokeCorrente)">DisLike</button> <!-- bottone con classe custom -->
+  </div>
+</div> <!-- fine row bottoni  -->
+
+    <!-- richiamo in rendereing i tag dei due BOX PIACIUTI E NON PIACIUTI con un loop-for dei rispettivi array likeJoke e disLikeJoke -->
+  <!-- <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"> -->
+<div class="d-flex">
+   <h5>JOKE piaciuti</h5>
+</div>
+  <!-- richiamo box piaciuti con bottone per passaggio ai non piaciuti tramite evento selectedPerDislike provenitente dai piaciuti (selectedPerDislike)="addDisLikeJokeLista($event)-->
+  <!-- valorizzazione di index per il rendering successivo nel child  -->
+<div class="row ">
+  <jk-jpiaciuti *ngFor="let joke of likeJoke; let i=index" [joke]="joke" [index]="i+1" (selectedPerDislike)="addDisLikeJokeLista($event)"></jk-jpiaciuti>
+</div>
+  <!--  -->
+  <!-- <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"> -->
+<div class="d-flex">
+  <h5>JOKE non piaciuti</h5>
+</div>
+  <!-- richiamo box non-piaciuti con bottone per passaggio ai piaciuti tramite evento selectedPerLike provenitente dai non-piaciuti (selectedPerLike)="addLikeJokeLista($event) -->
+  <!-- valorizzazione di index per il rendering successivo nel child  -->
+<div class="row">
+  <jk-jnon-piaciuti *ngFor="let joke of disLikeJoke; let i=index" [joke]="joke" [index]="i+1" (selectedPerLike)="addLikeJokeLista($event)"></jk-jnon-piaciuti>
+</div>
+  <!--  -->
+</div> <!-- fine classe container -->
+
+
